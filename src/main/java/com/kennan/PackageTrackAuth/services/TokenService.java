@@ -19,6 +19,7 @@ import com.nimbusds.jwt.SignedJWT;
 
 @Service
 public class TokenService {
+
     @Value("${google.token.info.url}")
     private String tokenUrl;
 
@@ -110,4 +111,5 @@ public class TokenService {
         String key = BLACK_LIST_PREFIX + tokenId;
         return redisTemplate.hasKey(key);
     }
+
 }
